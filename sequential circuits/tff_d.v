@@ -3,8 +3,8 @@ module tff(input t,clk,rst,output reg q,output qbar);
   always@(posedge clk or rst)begin
     if(rst)
       q<=0;
-    else
-      q<=t^q;
+    else if(clk & t)
+      q<=~q;
   end
       assign qbar=~q;
 endmodule
