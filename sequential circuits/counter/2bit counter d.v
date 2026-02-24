@@ -18,7 +18,7 @@ module counter_2bit(input clk,rst,output [1:0]q);
  wire q0,q1;
   wire qb1,qb2;
   jkff f1(1'b1,1'b1,clk,rst,q0,qb1);
-  jkff f2(qb1,qb1,clk,rst,q1,qb2);
+  jkff f2(1'b1,1'b1,qb1,rst,q1,qb2);
   assign q={q1,q0};
 endmodule 
         
