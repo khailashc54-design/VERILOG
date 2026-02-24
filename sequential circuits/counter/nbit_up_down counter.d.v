@@ -1,18 +1,3 @@
-// Code your design here
-module jkff(input j,k,clk,rst, output reg q,output qbar);
-  always @(posedge clk or posedge rst)begin
-    if(rst)
-      q=1'b0;
-       else case({j,k})
-         2'b00:q<=q;
-         2'b01:q<=0;
-         2'b10:q<=1;
-         2'b11:q<=~q;
-    endcase
-  end
-  assign qbar=~q;
-  
-endmodule
 module counter #(parameter n=4)(input clk,rst,mode,output reg[n-1:0]q);
   always @(posedge clk or posedge rst)begin 
     if(rst)
